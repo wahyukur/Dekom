@@ -28,18 +28,23 @@
         </div>
         <div class="box-body">
 
-            <div class="row">
-        <form class="form-horizontal" method = "post" id="tab" action="">
+        <div class="row">
+        <form class="form-horizontal" method = "post" id="tab" action="{{ route('period_keg') }}">
+            <input type = "hidden" name = "_token" value = "<?php echo csrf_token() ?>">
                 <label class="control-label">Semester : </label>
                     <div class="col-sm-2">
-                        <select id="Semester" name="Semester" class="form-control">            
+                        <select id="semester" name="semester" class="form-control">            
                           <option value="1"> Semester 1
                           <option value="2"> Semester 2
                         </select>        
                     </div>
                 <label>Tahun</label>
                     <div class="col-sm-2">
-                        <input type="month" class="form-control" placeholder="  " name="namaKeg">
+                    <select id="tahun" name="tahun" class="form-control">            
+                          @foreach ($tahun as $period)
+                          <option value="{{ $period->year }}">{{ $period->year }} 
+                          @endforeach
+                        </select>
                     </div>
                     
                     <div class="col-sm-3">    
@@ -49,7 +54,7 @@
             </div>
 
         <br>        
-        <table class="table table-hover">
+        <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>No</th>
@@ -85,7 +90,6 @@
                                 <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
-                        
                     @endforeach
             </tbody>
         </table>

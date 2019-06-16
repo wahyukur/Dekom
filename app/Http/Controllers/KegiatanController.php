@@ -38,4 +38,33 @@ class KegiatanController extends Controller
         
         return redirect()->route('kegiatan');
     }
+
+    public function period(Request $request)
+    {
+        $tahun = $request->input('tahun');
+        $index = 1;
+        $range_tahun = DB::table('kegiatan')->select(DB::raw('YEAR(tgl_akhir) year'))
+                                      ->groupby('year')
+                                      ->get();
+        $semester = $request->input('semester');
+            if ($semester == 1) {
+                $period = DB::table('kegiatan as K')
+                        ->select('K.*', 'JK.jenis_kegiatan')
+                        ->join('j_kegiatan as JK', 'K.jenis_id', '=', 'JK.id')
+                        ->whereBetween(DB::raw('MONTH (K.tgl_akhir)'), [1, 6])
+                        ->whereYear('K.tgl_akhir', $tahun)
+                        ->get();           
+                    }
+            elseif ($semester == 2) {
+                $period = DB::table('kegiatan as K')
+                        ->select('K.*', 'JK.jenis_kegiatan')
+                        ->join('j_kegiatan as JK', 'K.jenis_id', '=', 'JK.id')
+                        ->whereBetween(DB::raw('MONTH (K.tgl_akhir)'), [7, 12])
+                        ->whereYear('K.tgl_akhir', $tahun)
+                        ->get();                
+            }
+            return view('pages.kegiatan', ['tblkeg' => $period,
+                                           'tahun' => $range_tahun,
+                                            'index' => $index]);
+    }
 }
