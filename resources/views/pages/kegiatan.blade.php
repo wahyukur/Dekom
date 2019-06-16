@@ -27,7 +27,27 @@
           </div>
         </div>
         <div class="box-body">
-        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+
+            <div class="row">
+        <form class="form-horizontal" method = "post" id="tab" action="">
+                <label class="control-label">Semester : </label>
+                    <div class="col-sm-2">
+                        <select id="Semester" name="Semester" class="form-control">            
+                          <option value="1"> Semester 1
+                          <option value="2"> Semester 2
+                        </select>        
+                    </div>
+                <label>Tahun</label>
+                    <div class="col-sm-2">
+                        <input type="month" class="form-control" placeholder="  " name="namaKeg">
+                    </div>
+                    
+                    <div class="col-sm-3">    
+                        <button id="submit" class="btn btn-primary pull-right ">Proses</button>
+                    </div>
+        </form>
+            </div>
+
         <br>        
         <table class="table table-hover">
             <thead>
@@ -65,7 +85,7 @@
                                 <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
-                        {{ $index++ }}
+                        
                     @endforeach
             </tbody>
         </table>

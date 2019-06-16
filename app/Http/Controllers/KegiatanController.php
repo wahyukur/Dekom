@@ -18,6 +18,10 @@ class KegiatanController extends Controller
         $hadir = implode(", ", $arr_hadir);
         $tglMulai = $request->input('tglMulai');
         $tglAkhir = $request->input('tglAkhir');
+        $convMulai = strtotime($tglMulai);
+        $convAkhir = strtotime($tglAkhir);
+        $newMulai = date('Y-m-d', $convMulai);
+        $newAkhir = date('Y-m-d', $convAkhir);
         $keterangan = $request->input('ketKeg');
 
             $insKeg = new Kegiatan;
@@ -26,8 +30,8 @@ class KegiatanController extends Controller
             $insKeg->tempat = $tempat;
             $insKeg->penyelengara = $penyelengara;
             $insKeg->dihadiri = $hadir;
-            $insKeg->tgl_mulai = $tglMulai;
-            $insKeg->tgl_akhir = $tglAkhir;
+            $insKeg->tgl_mulai = $newMulai;
+            $insKeg->tgl_akhir = $newAkhir;
             $insKeg->keterangan = $keterangan;
             $insKeg->check = 'no';
             $insKeg->save();
