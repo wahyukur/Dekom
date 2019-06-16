@@ -27,9 +27,8 @@
           </div>
         </div>
         <div class="box-body">
-        <input class="form-control" id="myInput" type="text" placeholder="Search..">
         <br>        
-        <table class="table table-hover">
+        <table id="example1" class="table table-hover">
             <thead>
                 <tr>
                     <th>No</th>
@@ -65,7 +64,6 @@
                                 <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
-                        {{ $index++ }}
                     @endforeach
             </tbody>
         </table>
