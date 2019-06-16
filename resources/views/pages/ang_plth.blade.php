@@ -51,9 +51,7 @@
           </div>
         </div>
         <div class="box-body">
-            <input class="form-control" id="myInput" type="text" placeholder="Search..">
-            <br>        
-            <table class= "table table-hover">
+            <table id="example1" class= "table table-bordered table-striped">
                 <thead class= "thead-dark">
                     <tr>
                         <th>No.</th>
@@ -69,7 +67,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody id="myTable">
+                <tbody>
                     @foreach($tblAngPlth as $ap)
                     <tr>
                         <td>{{ $ap->id }}</td>

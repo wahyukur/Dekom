@@ -28,7 +28,7 @@
         </div>
         <div class="box-body">
         <br>        
-        <table id="example1" class="table table-hover">
+        <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>No</th>
