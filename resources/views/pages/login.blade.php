@@ -4,6 +4,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 <body>
+     
     <form action="{{ route('postlogin') }}" aria-label="{{ __('Login') }}" method="post">
         @if ($message = Session::get('error'))
             <p><i class="icon fa fa-warning"></i> {{$message}}</p>

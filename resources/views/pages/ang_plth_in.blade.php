@@ -21,20 +21,21 @@
         <div class="box-header with-border">
             <h3 class="box-title">Input Anggaran Pelatihan</h3>
         </div>
-            <form role="form">
-                <div class="box-body">
-                    
+            <form role="form" method="post">
+              <div class="box-body">   
                 <div class="form-group">
                     <label>Nama Kegiatan</label>
-                    <select class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
+                    <select class="form-control" id="nama_keg" onChange="isi_Otomatis()">
+                        @foreach ($tblkeg as $k)
+                        <option value="{{ $k->nama_keg }}">{{ $k->nama_keg }}</option>
+                        @endforeach
+                        <input type="hidden" id="id" name="id" value="{{ $k->id }}">
                     </select>
                 </div>
 
                 <div class="form-group">
                   <label>Tempat</label>
-                  <input type="text" class="form-control" placeholder="Tempat" disabled>
+                  <input type="text" id="tempat" name="tempat" class="form-control" placeholder="{{ $k->tempat }}" disabled>
                 </div>
 
                 <div class="form-group">

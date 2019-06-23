@@ -18,6 +18,7 @@ class PagesController extends Controller
         return view('pages.login');
     }
 
+    // PAGE ANGGARAN PELATIHAN
     public function ang_plth(Request $request)
     {
         $tbluser = DB::table('users')->get();
@@ -34,6 +35,7 @@ class PagesController extends Controller
                                                    'tblJKeg' => $tblJkeg]);
     }
 
+    // PAGE ANGGARAN PELATIHAN
     public function ang_spd(Request $request)
     {
         $uri = $request->path();
@@ -56,7 +58,8 @@ class PagesController extends Controller
                                                    'tblJKeg' => $tblJkeg]);
                     }
     }
-    
+
+    // PAGE KEGIATAN
     public function kegiatan()
     {
         $tbluser = DB::table('users')->get();
@@ -73,14 +76,7 @@ class PagesController extends Controller
                                                     'tahun' => $tahun]);
     }
 
-    public function showInputKeg()
-    {
-        $tblUser = DB::table('users')->get();
-        $tblJkeg = DB::table('j_kegiatan')->get();
-        return view('pages.kegiatan_in', ['tblUser' => $tblUser,
-                                          'tblJkeg' => $tblJkeg]);
-    }
-
+    // PAGE PROKER
     public function pk_aktif()
     {
         return view('pages.proker_aktif');
