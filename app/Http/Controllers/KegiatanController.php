@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Kegiatan;
 use App\Jenis;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\kegiatanExport;
 
 class KegiatanController extends Controller
 {
@@ -66,5 +68,9 @@ class KegiatanController extends Controller
             return view('pages.kegiatan', ['tblkeg' => $period,
                                            'tahun' => $range_tahun,
                                             'index' => $index]);
+    }
+
+    public function exportKegiatan(){
+        return Excel::download(new kegiatanExport, 'Kegiatan.xlsx');
     }
 }

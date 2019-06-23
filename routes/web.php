@@ -40,6 +40,9 @@ Route::middleware(['web', 'auth'])->group(function(){
 	Route::get('proker_pasif', 'PagesController@pk_pasif')->name('pk_pasif');
 	// KALENDER
 	Route::get('kalender', 'PagesController@kalender')->name('kalender');
+
+	Route::get('exportKegiatan', 'KegiatanController@exportKegiatan')->name('exportKegiatan');
+
 	// LOGOUT
 	Route::get('logout', 'AuthController@getLogout')->name('logout');
 });

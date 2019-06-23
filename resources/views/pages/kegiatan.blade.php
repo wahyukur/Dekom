@@ -53,7 +53,8 @@
         </form>
             </div>
 
-        <br>        
+        <br>
+        <a href="{{ route('exportKegiatan') }}" class="btn btn-sm btn-success pull-right" target="_blank"><span><i class="fa fa-file-excel-o" aria-hidden="true"></i> </span> Export Excel</a>
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
