@@ -54,7 +54,7 @@
             </div>
 
         <br>
-        <a href="{{ route('exportKegiatan') }}" class="btn btn-sm btn-success pull-right" target="_blank"><span><i class="fa fa-file-excel-o" aria-hidden="true"></i> </span> Export Excel</a>
+        <!-- <a href="{{ route('exportKegiatan') }}" class="btn btn-sm btn-success pull-right" target="_blank"><span><i class="fa fa-file-excel-o" aria-hidden="true"></i> </span> Export Excel</a> -->
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -70,10 +70,11 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody id="myTable">   
+            <tbody id="myTable">
+                @php $no=1 @endphp
                 @foreach ($tblkeg as $keg)
                     <tr>
-                            <td>{{ $index }}</td>
+                            <td>{{ $no++ }}</td>
                             <td>{{ $keg->jenis_kegiatan }}</td>
                             <td>{{ $keg->nama_keg }}</td>
                             <td>{{ $keg->tempat }}</td>

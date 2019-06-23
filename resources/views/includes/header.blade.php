@@ -9,7 +9,7 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <div class="pull-right">
-        <a href="{{ route('logout') }}" class="btn btn-default btn-flat"><span><i class="fa fa-power-off"></i></span> Sign out</a>
+        <a href="{{ route('logout') }}" class="btn btn-default btn-flat"><span><i class="fa fa-power-off"></i></span> Logout</a>
       </div>
     </nav>
   </header>

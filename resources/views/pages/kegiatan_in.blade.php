@@ -29,7 +29,7 @@
                     <label>Jenis Kegiatan</label>
                     <select class="form-control" name="jenisKeg">
                         @foreach($tblJkeg as $JK)
-                          <option value="{{ $JK->id }}">{{ $JK->jenis_kegiatan }}</option>
+                          <option value="{{ $JK->id }}">{{ $JK->id }} - {{ $JK->jenis_kegiatan }}</option>
                         @endforeach
                     </select>
                 </div>
