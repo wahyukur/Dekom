@@ -103,6 +103,4 @@
         <!-- /.box-footer-->
     </div>
 </section>    
-
-
 @stop

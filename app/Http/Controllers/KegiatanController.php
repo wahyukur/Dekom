@@ -8,6 +8,29 @@ use App\Jenis;
 
 class KegiatanController extends Controller
 {
+    public function index()
+    {
+        $tbluser = DB::table('users')->get();
+        $index = 1;
+        $tahun = DB::table('kegiatan')->select(DB::raw('YEAR(tgl_akhir) year'))
+                                      ->groupby('year')
+                                      ->get();
+        $tblkeg = DB::table('kegiatan as K')
+                        ->select('K.*', 'JK.jenis_kegiatan')
+                        ->join('j_kegiatan as JK', 'K.jenis_id', '=', 'JK.id')
+                        ->get();
+                    return view('pages.kegiatan', ['tblkeg' => $tblkeg,
+                                                    'index' => $index,
+                                                    'tahun' => $tahun]);
+    }
+    public function showInputKeg()
+    {
+        $tblUser = DB::table('users')->get();
+        $tblJkeg = DB::table('j_kegiatan')->get();
+        return view('pages.kegiatan_in', ['tblUser' => $tblUser,
+                                          'tblJkeg' => $tblJkeg]);
+    }
+    
     public function store(Request $request)
     {
         $jenis = $request->input('jenisKeg');

@@ -28,19 +28,6 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-tasks"></i> <span> Program Kerja</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ route('pk_aktif') }}"><i class="fa fa-circle-o"></i> Proker Aktif</a></li>
-            <li><a href="{{ route('pk_pasif') }}"><i class="fa fa-circle-o"></i> Proker Pasif</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
             <i class="fa fa-dashboard"></i> <span> Kontrol Anggaran</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -59,6 +46,19 @@
                 <li><a href="{{ route('ang_spd_luar') }}"><i class="fa fa-circle-o"></i> SPD Luar Negeri</a></li>
               </ul>
             </li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-tasks"></i> <span> Program Kerja</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('pk_aktif') }}"><i class="fa fa-circle-o"></i> Proker Aktif</a></li>
+            <li><a href="{{ route('pk_pasif') }}"><i class="fa fa-circle-o"></i> Proker Pasif</a></li>
           </ul>
         </li>
 
