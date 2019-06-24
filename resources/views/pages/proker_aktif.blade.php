@@ -89,7 +89,7 @@
             </div>
         <!-- /.box-body -->
         <div class="box-footer">
-            <a href="#" class="btn btn-info" role="button">Cetak Proker Aktif Periode ..</a>
+            <a href="{{ route('report1') }}" class="btn btn-info" role="button" target="_blank">Cetak Proker Aktif Periode ..</a>
           <br>
           <p> </p>
         </div>

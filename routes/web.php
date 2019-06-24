@@ -46,4 +46,7 @@ Route::middleware(['web', 'auth'])->group(function(){
 
 	// LOGOUT
 	Route::get('logout', 'AuthController@getLogout')->name('logout');
+
+	// Report
+	Route::get('report1', 'ProkerController@report1')->name('report1');
 }); 
