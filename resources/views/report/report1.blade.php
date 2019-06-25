@@ -63,7 +63,7 @@
 				<td rowspan="4" class="d1">Pengawasan pasif Dewan Komisaris </td>
 				<td class="d1">a. Pelaksanaan review laporan kinerja usaha dan keuangan bank</td>
 				<td class="d1">Dilaksanakan pada setiap rapat Dekom & Direksi sesuai target yaitu 2 bulan sekali (1 tahun 6 kali)</td>
-				<td class="d1">Review laporan kinerja usaha & keuangan dilaksanakan sebanyak {{  }} kali</td>
+				<td class="d1">Review laporan kinerja usaha & keuangan dilaksanakan sebanyak kali</td>
 				<td class="nilai">{{ $data['hasil_a'] }}</td>
 				<td class="nilai">12.5</td>
 				<td class="nilai">@php $pasif_a = $data['hasil_a'] * 12.5; @endphp {{ $pasif_a }}</td>
